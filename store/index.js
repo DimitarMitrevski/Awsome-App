@@ -14,8 +14,8 @@ export const actions = {
     //   commit('user', req.cookies)
     // }
     const token = req.headers.cookie
-      .split(' ')
-      .find((cookie) => cookie.includes('token'))
+      ?.split(' ')
+      ?.find((cookie) => cookie.includes('token'))
     if (token) {
       const username = Buffer.from(token.split('=')[1], 'base64')
         .toString()
